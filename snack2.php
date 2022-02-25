@@ -41,8 +41,7 @@ $posts = [
     ],
 ];
 
-
-
+// Array di
 $keys_array = array_keys($posts);
 
 ?>
@@ -72,14 +71,12 @@ $keys_array = array_keys($posts);
         <h4><?= $keys_array[$i] ?></h4>
         <ul>
             <?php for ($j = 0; $j < count($posts[$keys_array[$i]]); $j++) { ?>
-
+                <?php $list = $posts[$keys_array[$i]][$j] ?>
                 <li>
-                    <span><?php echo $posts[$keys_array[$i]][$j]['title'] ?> </span>
-                    <span><?php echo $posts[$keys_array[$i]][$j]['author'] ?> </span>
-                    <span><?php echo $posts[$keys_array[$i]][$j]['text'] ?> </span>
-
+                    <strong><?= $list['title'] ?></strong> <br>
+                    <strong>Author:</strong> <span><?= $list['author'] ?> </span> <br>
+                    <strong>Text:</strong> <span><?= $list['text'] ?> </span>
                 </li>
-
             <?php } ?>
         </ul>
     <?php } ?>
