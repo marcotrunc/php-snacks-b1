@@ -45,7 +45,7 @@ if (($is_len) && ($is_contained) && ($is_number)) {
 </head>
 
 <body>
-    <div>
+    <section>
         <h2>Primo Esercizio</h2>
         <p>
             <strong>Traccia: </strong>
@@ -56,7 +56,7 @@ if (($is_len) && ($is_contained) && ($is_number)) {
             </span>
             <?php echo "<h4>$message</h4>" ?>
         </p>
-    </div>
+    </section>
 </body>
 
 </html>
