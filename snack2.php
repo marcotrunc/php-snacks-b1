@@ -41,14 +41,10 @@ $posts = [
     ],
 ];
 
-var_dump($posts);
 
-// for ($i = 0; $i < count($posts); $i++) {
-//     echo array_values($posts[$i]);
-// }
 
-$keyarray = $posts[$i];
-echo $keyarray;
+$keys_array = array_keys($posts);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,6 +57,7 @@ echo $keyarray;
 </head>
 
 <body>
+    <!-- Traccia -->
     <h2>Esercizio 2</h2>
     <p>
         <strong>Traccia:</strong>
@@ -70,7 +67,22 @@ echo $keyarray;
             Stampare ogni data con i relativi post.
         </span>
     </p>
+    <!-- Esecuzione -->
+    <?php for ($i = 0; $i < count($keys_array); $i++) { ?>
+        <h4><?= $keys_array[$i] ?></h4>
+        <ul>
+            <?php for ($j = 0; $j < count($posts[$keys_array[$i]]); $j++) { ?>
 
+                <li>
+                    <span><?php echo $posts[$keys_array[$i]][$j]['title'] ?> </span>
+                    <span><?php echo $posts[$keys_array[$i]][$j]['author'] ?> </span>
+                    <span><?php echo $posts[$keys_array[$i]][$j]['text'] ?> </span>
+
+                </li>
+
+            <?php } ?>
+        </ul>
+    <?php } ?>
 </body>
 
 </html>
